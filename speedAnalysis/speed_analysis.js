@@ -37,10 +37,16 @@ button.onclick = endTest;
 
             // Display the results
             var outputDiv = document.getElementById("output");
-            outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
-                "<p>Words Typed: " + typedWords + "</p>" +
-                "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
-                "<p>Words Per Minute (WPM): " + wpm + "</p>";
+
+// Calculate the total length of the text entered by the user
+var totalTextLength = userTypedText.length; // Length of the entire text
+
+// Update the output to include the total text length
+outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
+    "<p>Words Typed: " + typedWords + "</p>" +
+    "<p>Total Characters Typed: " + totalTextLength + "</p>" +
+    "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" +
+    "<p>Words Per Minute (WPM): " + wpm + "</p>";
 
             // Reset the button
             var button = document.getElementById("btn");
