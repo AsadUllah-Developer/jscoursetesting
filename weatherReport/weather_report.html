@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+</head>
+<body>
+  <h1>Weather Report</h1>
+
+  <!-- Weather by City -->
+  <form id="cityWeatherForm">
+    <h2>Get Weather by City</h2>
+    <label for="city">Enter City:</label>
+    <input type="text" id="city" placeholder="Enter City" required>
+    <button type="submit">Get Weather</button>
+  </form>
+  <div id="cityWeatherInfo"></div>
+
+  <!-- Weather by Latitude and Longitude -->
+  <form id="latLonWeatherForm">
+    <h2>Get Weather by Latitude and Longitude</h2>
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" placeholder="Enter Latitude" required>
+    <br>
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" placeholder="Enter Longitude" required>
+    <br><br>
+    <button type="submit">Get Weather</button>
+  </form>
+  <div id="latLonWeatherInfo"></div>
+
+  <script src="weather_report.js"></script>
+</body>
+</html>
