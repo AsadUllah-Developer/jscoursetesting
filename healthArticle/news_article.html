@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Articles</title>
+</head>
+<body>
+  <div id="articles">
+    <h1>Latest News</h1>
+  </div>
+</body>
+</html>
+
+<script>
+    var xhr = new XMLHttpRequest();
+    var url = './news.json';
+  
+    // Step 3: Open the request
+    xhr.open('GET', url, true);
+  
+    // Step 4: Set response type to JSON
+    xhr.responseType = 'json';
+  
+    // Step 5: Define the onload event to handle the response
+    xhr.onload = function () {
+      // Check if the request was successful
+      if (xhr.status === 200) {
+        // Parse JSON data (no need for JSON.parse as responseType is set to 'json')
+        var articles = xhr.response.articles;
+  
+        // Ensure the container exists
+        var articlesDiv = document.getElementById('articles');
+        if (!articlesDiv) {
+          console.error('Error: No element with id "articles" found.');
+          return;
+        }
+  
+        // Loop through the articles and display them
+        articles.forEach(function (article) {
+          var articleDiv = document.createElement('div');
+          articleDiv.classList.add('article');
+  
+          var title = document.createElement('h2');
+          title.textContent = article.title;
+  
+          var description = document.createElement('p');
+          description.textContent = article.description;
+  
+          var author = document.createElement('p');
+          author.textContent = "By: " + article.author;
+  
+          var date = document.createElement('p');
+          date.textContent = "Published on: " + article.date;
+  
+          articleDiv.appendChild(title);
+          articleDiv.appendChild(description);
+          articleDiv.appendChild(author);
+          articleDiv.appendChild(date);
+  
+          articlesDiv.appendChild(articleDiv);
+        });
+      } else {
+        console.error('Failed to fetch data. Status code: ' + xhr.status);
+      }
+    };
+  
+    // Step 6: Define the onerror event to handle network issues
+    xhr.onerror = function () {
+      console.error('Error: Unable to fetch data.');
+    };
+  
+    // Step 7: Send the request
+    xhr.send();
+  </script>
+  

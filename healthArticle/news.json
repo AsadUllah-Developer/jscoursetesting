@@ -1,0 +1,23 @@
+{
+  "articles": [
+    {
+      "title": "Breaking News: Tech Advances",
+      "description": "New innovations in AI are revolutionizing the tech world.",
+      "author": "John Doe",
+      "date": "2025-01-26"
+    },
+    {
+      "title": "World Politics Update",
+      "description": "Global leaders discuss climate change initiatives.",
+      "author": "Jane Smith",
+      "date": "2025-01-25"
+    },
+    {
+      "title": "Sports Highlights",
+      "description": "The underdog team wins the championship.",
+      "author": "Mark Taylor",
+      "date": "2025-01-24"
+    }
+  ]
+}
+
